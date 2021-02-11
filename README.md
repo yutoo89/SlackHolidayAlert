@@ -51,7 +51,9 @@ Slack APIの設定方法は下記を参考
 composer install
 ```
 
-.envファイルを作成
+#### .envファイルを作成
+
+Slack API アプリのトークンを設定
 
 ```bash
 cp .env.example .env
