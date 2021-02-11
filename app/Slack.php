@@ -9,7 +9,7 @@ class Slack
      *
      * @param string $url
      * @param string $message
-     * @return void
+     * @return string|bool
      */
     public static function alert(string $url, string $message)
     {
