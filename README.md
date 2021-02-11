@@ -1,0 +1,2 @@
+# SlackHolidayAlert
+祝日が近くなるとSlackに通知します
