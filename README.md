@@ -6,23 +6,22 @@
 
 ### Slack側の設定
 
+Slack APIの設定方法は下記を参考
+
+[Slack APIを使用してメッセージを送信する](https://qiita.com/kou_pg_0131/items/56dd81f2f4716ca292ef)
+
 #### Slack APIでアプリを作成
 
-ワークスペースにログイン
-
-「 [Slack API](https://api.slack.com/apps?new_app=1) 」 から新しくアプリを作成
-
-アプリ名を入力してワークスペースを選択して `Create App`ボタンをクリック
+1. ワークスペースにログイン
+2. 「 [Slack API](https://api.slack.com/apps?new_app=1) 」 から新しくアプリを作成
+3. アプリ名を入力してワークスペースを選択して `Create App`ボタンをクリック
 
 #### アプリにスコープを設定
 
-`OAuth & Permission` をクリック
-
-ページ内の`Scopes` セクションからアプリにスコープを追加
-
- `Bot Token Scopes`の`Add an OAuth Scope` をクリック
-
-メッセージ投稿に必要な`chat:write` を選択して追加
+1. `OAuth & Permission` をクリック
+2. ページ内の`Scopes` セクションからアプリにスコープを追加
+3. `Bot Token Scopes`の`Add an OAuth Scope` をクリック
+4. メッセージ投稿に必要な`chat:write` を選択して追加
 
 ※ ボットとして投稿する場合は上記のトークンが必要
 
@@ -30,27 +29,19 @@
 
 #### アプリをワークスペースにインストール
 
-スコープを設定したページの上部の`Install App to Workspace` ボタンをクリック
-
-権限のリクエストを許可する
-
-アプリのインストールに成功するとトークンが生成されるのでコピー
-
-- `xoxb-` から始まる `Bot User OAuth Access Token`
+1. スコープを設定したページの上部の`Install App to Workspace` ボタンをクリック
+2. 権限のリクエストを許可する
+3. アプリのインストールに成功するとトークンが生成されるのでコピー
+   - `xoxb-` から始まる `Bot User OAuth Access Token`
 
 ※ ユーザとして投稿する場合は`xoxp-` から始まる `OAuth Access Token`をコピー
 
 #### アプリをチャンネルに追加
 
-Slackアプリを開き、メッセージを投稿したいチャンネルを開く
-
-`詳細`をクリック
-
-`その他` => `アプリを追加する`の順にクリック
-
-さきほど作成したアプリを追加
-
-
+1. Slackアプリを開き、メッセージを投稿したいチャンネルを開く
+2. `詳細`をクリック
+3. `その他` => `アプリを追加する`の順にクリック
+4. さきほど作成したアプリを追加
 
 ### その他の準備
 
@@ -60,9 +51,7 @@ Slackアプリを開き、メッセージを投稿したいチャンネルを開
 composer install
 ```
 
-#### .envファイルを作成
-
-Slack API アプリのトークンを設定
+.envファイルを作成
 
 ```bash
 cp .env.example .env
