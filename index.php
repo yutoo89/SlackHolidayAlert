@@ -2,7 +2,5 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-App\Slack::alert(
-    $_ENV['URL'],
-    'テスト投稿'
-);
+$slack = new App\Slack($_ENV['OAUTH_ACCESS_TOKEN']);
+$slack->alert('#general', 'botとして投稿');

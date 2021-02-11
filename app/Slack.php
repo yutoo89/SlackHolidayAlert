@@ -4,17 +4,25 @@ namespace App;
 
 class Slack
 {
+    private $oauthAccessToken;
+
+    public function __construct(string $oauthAccessToken)
+    {
+        $this->oauthAccessToken = $oauthAccessToken;
+    }
+
     /**
      * Slackにメッセージを投稿する
      *
-     * @param string $url
+     * @param string $channel
      * @param string $message
      * @return string|bool
      */
-    public static function alert(string $url, string $message)
+    public function alert(string $channel, string $message)
     {
-        $url = $url;
+        $url = 'https://slack.com/api/chat.postMessage';
         $POST_DATA = [
+            'channel' => $channel,
             'text' => $message,
         ];
 
@@ -22,6 +30,7 @@ class Slack
         curl_setopt($curl, CURLOPT_POST, TRUE);
         curl_setopt($curl, CURLOPT_HTTPHEADER, [
             'Content-type: application/json',
+            'Authorization: Bearer ' . $this->oauthAccessToken,
         ]);
         curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($POST_DATA));
 
