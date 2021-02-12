@@ -15,7 +15,7 @@ $target = Carbon::today()->addDays($notifyBeforeDays);
 $holiday = $calender->checkHoliday($target);
 
 if ($holiday) {
-    $message = $holiday['date']->format('Y年m月d日') . "は" . $holiday['name'] . "です";
+    $message = $target->format('Y年m月d日') . "は" . $holiday . "です";
     $slack = new Slack($_ENV['OAUTH_ACCESS_TOKEN']);
     $slack->alert('#general', $message);
 }

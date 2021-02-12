@@ -52,10 +52,10 @@ class Calendar
     }
 
     /**
-     * 指定した日付が祝日であれば概要を返す
+     * 指定した日付が祝日であれば何の日であるか返す
      *
      * @param Carbon $target
-     * @return array|null
+     * @return string|null
      */
     public function checkHoliday(Carbon $target)
     {
@@ -63,7 +63,7 @@ class Calendar
         $end = $start->copy()->addDay();
         $holidays = $this->holidays($start, $end);
         if (count($holidays)) {
-            return array_shift($holidays);
+            return array_shift($holidays)['name'];
         }
         return null;
     }
