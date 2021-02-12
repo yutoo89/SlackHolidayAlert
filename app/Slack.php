@@ -29,7 +29,7 @@ class Slack
         $curl = curl_init($url);
         curl_setopt($curl, CURLOPT_POST, TRUE);
         curl_setopt($curl, CURLOPT_HTTPHEADER, [
-            'Content-type: application/json',
+            'Content-type: application/json; charset=utf-8',
             'Authorization: Bearer ' . $this->oauthAccessToken,
         ]);
         curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($POST_DATA));
