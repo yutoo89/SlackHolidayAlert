@@ -1,6 +1,6 @@
 # SlackHolidayAlert
 
-祝日が近づいたことをSlackで通知してくれます
+祝日が近づいたことをSlackで通知してくれます。
 
 ## 使い方
 
